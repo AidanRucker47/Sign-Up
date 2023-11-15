@@ -1,6 +1,6 @@
 import { useState } from "react";
 
-export default function SignUpForm() {
+export default function SignUpForm({ setToken }) {
   const [username, setUsername] = useState("");
   const [password, setPassword] = useState("");
   const [error, setError] = useState(null);
@@ -20,8 +20,8 @@ export default function SignUpForm() {
       });
 
       const info = await rsp.json();
-
       console.log(info);
+      setToken(info.token);
     } catch (err) {
       setError(err.message);
     }
@@ -37,6 +37,7 @@ export default function SignUpForm() {
         <label>
           Username{" "}
           <input
+            minLength="8"
             value={username}
             onChange={(event) => {
               console.log(event.target.value);
@@ -49,6 +50,7 @@ export default function SignUpForm() {
         <label>
           Password{" "}
           <input
+            minLength="8"
             value={password}
             onChange={(event) => {
               console.log(event.target.value);
