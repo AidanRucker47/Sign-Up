@@ -61,7 +61,9 @@ export default function SignUpForm({ setToken }) {
           ></input>
         </label>
         <br />
-        <button type="submit">Submit</button>
+        <button className="pill" type="submit">
+          Submit
+        </button>
       </form>
     </>
   );
