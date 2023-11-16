@@ -30,7 +30,9 @@ export default function Authenticate({ token }) {
 
       {error && <p>{error}</p>}
 
-      <button onClick={handleClick}>Authenticate Token</button>
+      <button className="authenticate" onClick={handleClick}>
+        Authenticate Token
+      </button>
       {successMessage && <p>{successMessage}</p>}
       {username && <p>The logged in user is {username}</p>}
     </>
